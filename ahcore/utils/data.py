@@ -6,12 +6,17 @@ import hashlib
 import pickle
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, TypedDict
+from typing import ClassVar, Dict, Optional, Protocol, TypedDict
 
 from dlup.data.dataset import TiledROIsSlideImageDataset
 
 
-def dataclass_to_uuid(data_class: dataclass) -> str:
+class _IsDataclass(Protocol):
+    # From https://stackoverflow.com/a/55240861
+    __dataclass_fields__: ClassVar[Dict]
+
+
+def dataclass_to_uuid(data_class: _IsDataclass) -> str:
     """Create a unique identifier for a dataclass.
 
     This is done by pickling the object, and computing the sha256 hash of the pickled object.
@@ -36,8 +41,7 @@ def dataclass_to_uuid(data_class: dataclass) -> str:
 
 @dataclass(frozen=False)
 class DataDescription:
-    """General description of the dataset and settings on how these should be sampled.
-    """
+    """General description of the dataset and settings on how these should be sampled."""
 
     mask_label: Optional[str]
     mask_threshold: Optional[float]  # This is only used for training
