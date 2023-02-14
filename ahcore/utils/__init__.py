@@ -6,4 +6,3 @@
 - `rois.py`: Utilities to use regions of interest
 - `io.py`: General input/output utilities.
 """
-
