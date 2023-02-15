@@ -88,11 +88,14 @@ def print_config(
     resolve: bool = True,
 ) -> None:
     """Prints content of DictConfig using Rich library and its tree structure.
-    Args:
-        config (DictConfig): Configuration composed by Hydra.
-        fields (Sequence[str], optional): Determines which main fields from config will
-        be printed and in what order.
-        resolve (bool, optional): Whether to resolve reference fields of DictConfig.
+    Arguments
+    ---------
+    config : DictConfig
+        Configuration composed by Hydra.
+    fields : Sequence[str], optional
+        Determines which main fields from config will be printed and in what order.
+    resolve : bool, optional
+        Whether to resolve reference fields of DictConfig.
     """
 
     style = "dim"
