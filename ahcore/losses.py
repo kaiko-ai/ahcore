@@ -15,6 +15,7 @@ import torch.nn.functional as F
 
 class LossFactory(nn.Module):
     """Loss factory to construct the total loss."""
+
     def __init__(
         self,
         losses: list,

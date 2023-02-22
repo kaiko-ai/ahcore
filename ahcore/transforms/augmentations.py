@@ -49,6 +49,7 @@ class MeanStdNormalizer(nn.Module):
     """
     Normalizes the mean and standard deviation of the input image. Assumes the original range is `[0, 255]`.
     """
+
     def __init__(self, mean: tuple[float, float, float] | None = None, std: tuple[float, float, float] | None = None):
         """
         Parameters
@@ -85,6 +86,7 @@ class MeanStdNormalizer(nn.Module):
 
 class CenterCrop(nn.Module):
     """Perform a center crop of the image and target"""
+
     def __init__(self, size: int | tuple[int, int], **kwargs):
         super().__init__()
         _size = size
@@ -130,6 +132,7 @@ class AugmentationFactory(nn.Module):
     image.
     - `geometric_augmentations`: Transforms which affect the geometry. They are applied to both the image, ROI and mask.
     """
+
     DATA_KEYS = {"image": DataKey.INPUT, "target": DataKey.MASK, "roi": DataKey.MASK}
 
     def __init__(
