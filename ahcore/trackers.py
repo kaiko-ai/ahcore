@@ -52,7 +52,7 @@ class TiffWriter(Tracker):
         cat_predictions = torch.cat(predictions[0])
         arg_predictions = torch.argmax(cat_predictions, dim=1)
         for pred in arg_predictions:
-            yield pred.numpy().astype("uint8")
+            yield pred.cpu().numpy().astype("uint8")
 
     def __call__(self, predictions: list[list[Tensor]], metadata: dict[str, Any], *args, **kwargs):
         filename = Path(self.save_dir) / Path(str(metadata["filename"]) + ".tiff")

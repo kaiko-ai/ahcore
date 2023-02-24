@@ -234,6 +234,7 @@ def image_manifest_to_dataset(
     _annotations = _parse_annotations(manifest.annotations, base_dir=data_description.annotations_dir)
 
     # This block parses the mask
+    # FIXME: A different manifest needed during inference.
     _mask = _parse_annotations(manifest.mask, base_dir=data_description.annotations_dir)
     rois = None
     if data_description.convert_mask_to_rois and _mask is not None and stage == TrainerFn.FITTING:

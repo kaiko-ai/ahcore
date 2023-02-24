@@ -84,6 +84,7 @@ class MetricFactory:
     """Factory to create the metrics. These are fixed for the different tasks (e.g., segmentation, detection, whole-slide-level
     classification.
     """
+
     def __init__(self, metrics: list[AhCoreMetric]) -> None:
         """
         Parameters

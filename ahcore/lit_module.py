@@ -178,7 +178,7 @@ class AhCoreLightningModule(pl.LightningModule):
         output = {"loss": _loss, "loss_per_sample": loss.clone().detach(), "metrics": _metrics, **_relevant_dict}
 
         # Log the loss
-        self.log(f"{self.STAGE_MAP[stage]}/loss", _loss, batch_size=batch_size, sync_dist=True)
+        self.log(f"{self.STAGE_MAP[stage]}/loss", _loss, batch_size=batch_size, sync_dist=True, on_epoch=True)
         # Log the metrics
         self.log_dict(_metrics, batch_size=batch_size, sync_dist=True, prog_bar=False, on_epoch=True, on_step=False)
 
