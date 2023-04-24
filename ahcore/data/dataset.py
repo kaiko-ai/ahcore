@@ -66,6 +66,9 @@ class DlupDataModule(pl.LightningDataModule):
             Whether to use persistent workers. Check the pytorch documentation for more information.
         pin_memory : bool
             Whether to use cuda pin workers. Check the pytorch documentation for more information.
+        compute_staining : bool
+            Whether to compute the staining vectors for the images in the training set.
+            This is only necessary if you want to use any stain normzliation.
         """
         super().__init__()
 

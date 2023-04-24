@@ -53,7 +53,6 @@ class DataDescription:
     center_info_path: Optional[Path]
     centers: Optional[list[str]]
     annotations_dir: Path
-    compute_staining: bool
 
     training_grid: GridDescription
     inference_grid: GridDescription
