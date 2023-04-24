@@ -1,0 +1,40 @@
+_target_: ahcore.utils.data.DataDescription
+data_dir: ${oc.env:DATA_DIR}
+annotations_dir: ${oc.env:ANNOTATIONS_DIR}/tissue_background/v20230125/ # specify in .env
+manifest_path: ${oc.env:MANIFEST_PATH}/tissue_background/v20230125/tcga_manifest.json
+dataset_split_path: ${oc.env:DATASET_SPLIT}/tissue_background/v20230125/foreground_train_val_splits_for_robustness.json
+center_info_path: ${oc.env:DATASET_SPLIT}/tissue_background/v20230125/tissue_source_site_codes.csv
+extract_center: True
+centers: ["Greater Poland Cancer Center", "MSKCC", "Christiana Healthcare", "ILSBio", "Candler", "Indivumed", "Asterand"]
+mask_label: null
+mask_threshold: null
+roi_name: null  # This is the name of the label that carries the ROI
+use_roi: False
+# Eg. 512 x 512 is: tile_size 726 x 726 and tile_overlap 107 x 107
+# Tiles are cropped in the transforms downstream, to ensure the patch is completely visible, they are extracted
+# slightly larger (sqrt 2) with sufficient overlap so we have a 512 stride.
+training_grid:
+  mpp: 16
+  output_tile_size: [768, 768]
+  tile_overlap: [0, 0]
+  tile_size: [512, 512]
+inference_grid:
+  mpp: 16
+  tile_size: [512, 512]
+  tile_overlap: [0, 0]
+
+max_val_tiffs: 0
+normalize_mean: [0.485, 0.456, 0.406]
+normalize_std: [0.229, 0.224, 0.225]
+
+num_classes: 2
+use_class_weights: false  # Use the class weights in the loss
+
+remap_labels:
+  specimen: specimen
+
+index_map:
+  specimen: 1
+
+colors:
+  specimen: red

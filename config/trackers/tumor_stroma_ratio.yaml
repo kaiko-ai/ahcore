@@ -1,0 +1,4 @@
+tumor_stroma_ratio:
+  _target_: ahcore.trackers.TumorStromaRatio
+  save_dir: ${paths.output_dir}/
+  index_map: ${data_description.index_map}

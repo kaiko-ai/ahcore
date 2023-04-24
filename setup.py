@@ -42,7 +42,7 @@ setup(
     author="AI for Oncology Lab @ The Netherlands Cancer Institute",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Natural Language :: English",

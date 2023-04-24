@@ -267,9 +267,6 @@ def image_manifest_to_dataset(
         logger.info("Overriding mpp with value from manifest: %s", manifest.mpp)
         kwargs["overwrite_mpp"] = (manifest.mpp, manifest.mpp)
 
-    if rois is not None:
-        kwargs["limit_bounds"] = False
-
     # FIXME: rois has correct type, but not what dlup expects (Optional[Tuple[Tuple[int, ...]]])
     # If we are in inference mode, this means that we need to select *all* tiles covered by the ROI in contrast
     # to the case in training where we can select a subsample based on the threshold.

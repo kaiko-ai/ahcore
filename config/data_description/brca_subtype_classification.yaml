@@ -1,0 +1,43 @@
+_target_: ahcore.utils.data.DataDescription
+data_dir: ${oc.env:DATA_DIR}
+annotations_dir: ${oc.env:ANNOTATIONS_DIR} # specify in .env
+manifest_path: ${oc.env:MANIFEST_PATH}
+dataset_split_path: ${oc.env:DATASET_SPLIT}
+mask_label: roi
+mask_threshold: 0.5
+roi_name: roi  # This is the name of the label that carries the ROI
+# Eg. 512 x 512 is: tile_size 726 x 726 and tile_overlap 107 x 107
+# Tiles are cropped in the transforms downstream, to ensure the patch is completely visible, they are extracted
+# slightly larger (sqrt 2) with sufficient overlap so we have a 512 stride.
+training_grid:
+  mpp: 2.0
+  output_tile_size: [256, 256]
+  tile_overlap: [0, 0]
+  tile_size: [32, 32]
+inference_grid:
+  mpp: 2.0
+  output_tile_size: null
+  tile_size: [256, 256]
+  tile_overlap: [32, 32]
+
+num_classes: 2
+use_class_weights: false   # Use the class weights in the loss
+
+normalize_mean: [0.485, 0.456, 0.406]
+normalize_std: [0.229, 0.224, 0.225]
+#normalize_mean: null
+#normalize_std: null
+
+# Example index_map:
+# If multiple labels e.g. label_1 (value_1 vs value_2) and label_2 (value_A vs value_B vs value_C)
+# index_map:
+#   value_1: 0
+#   value_2: 1
+#   value_A: 0
+#   value_B: 1
+#   value_C: 2
+
+index_map:
+  ILC: 0
+  IDC: 1
+

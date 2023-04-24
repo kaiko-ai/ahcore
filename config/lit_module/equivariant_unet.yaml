@@ -10,7 +10,6 @@ model:
   num_layers: 3
   hidden_features: 32
   bilinear: true
-  return_features: True
 
 #  dropout_prob: 0.1
 

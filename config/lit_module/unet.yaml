@@ -1,21 +1,18 @@
 _target_: ahcore.lit_module.AhCoreLightningModule
 
 model:
-  _target_: ahcore.models.vanilla_unet.UNet
-  _partial_: true
+  _target_: ahcore.models.unet.Unet
   num_input_ch: 3
   depth: 4
-  num_initial_filters: 10
-#  dropout_prob: 0.1
+  num_initial_filters: 64
+  dropout_prob: 0.1
+  _partial_: true
 
 optimizer:
   _target_: torch.optim.Adam
   _partial_: true
-  lr: 5e-4
-  weight_decay: 1e-4
-  betas:
-    - 0.99
-    - 0.9
+  lr: 0.0005
+  weight_decay: 0.0005
 
 scheduler:
   _target_: torch.optim.lr_scheduler.ReduceLROnPlateau

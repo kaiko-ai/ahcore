@@ -1,0 +1,2 @@
+sampling_weight_update:
+  _target_: ahcore.callbacks.WeightUpdateCallback

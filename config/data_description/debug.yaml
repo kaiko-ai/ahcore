@@ -1,0 +1,21 @@
+_target_: ahcore.utils.data.DataDescription
+data_dir: null
+annotations_dir: null
+manifest_path: null
+dataset_split_path: null
+mask_label: null
+mask_threshold: null
+roi_name: null
+mpp: null
+tile_size:
+  - 512
+  - 512
+tile_overlap:
+  - 0
+  - 0
+num_classes: 2
+index_map:
+  object: 1
+
+colors:
+  object: red

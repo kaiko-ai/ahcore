@@ -1,0 +1,7 @@
+_target_: ahcore.data.debug_dataset.DebugDataModule
+output_shape:
+  - 512
+  - 512
+use_roi: false
+batch_size: 10
+num_samples: 200
