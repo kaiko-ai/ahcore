@@ -16,25 +16,25 @@ with open("README.md") as readme_file:
     long_description = readme_file.read()
 
 install_requires = [
-    "numpy>=1.23.2",
-    "torch>=1.12",
-    "pillow>=9.4.0",
-    "pytorch-lightning>=1.9.1",
-    "torchvision>=0.13.1",
-    "pydantic>=1.10.4",
-    "tensorboard>=2.9",
-    "mlflow>=1.26",
-    "hydra-core>=1.2.0",
-    "python-dotenv>=0.20",
-    "tqdm>=4.64",
-    "rich>=12.4",
-    "hydra-submitit-launcher>=1.2.0",
-    "hydra-optuna-sweeper>=1.2.0",
-    "hydra-colorlog>=1.2.0",
-    "dlup>=0.3.24",
-    "kornia>=0.6.9",
+    "numpy==1.23.2",
+    "torch==1.12",
+    "pillow==9.2.0",
+    "pytorch-lightning==1.7.1",
+    "torchvision",
+    "pydantic==1.10.4",
+    "tensorboard==2.9.1",
+    "mlflow==1.26",
+    "hydra-core==1.2.0",
+    "python-dotenv==0.20",
+    "tqdm==4.64",
+    "rich==12.4",
+    "hydra-submitit-launcher==1.2.0",
+    "hydra-optuna-sweeper==1.2.0",
+    "hydra-colorlog==1.2.0",
+    "dlup==0.3.24",
+    "kornia==0.6.9",
     "h5py",
-    "escnn",  # To use equivariant unets
+    "escnn",  # For equivariant UNET
 ]
 
 
@@ -42,7 +42,7 @@ setup(
     author="AI for Oncology Lab @ The Netherlands Cancer Institute",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    python_requires=">=3.10",
+    python_requires=">=3.9",
     classifiers=[
         "Development Status :: 1 - Planning",
         "Natural Language :: English",
