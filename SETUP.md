@@ -3,7 +3,7 @@ https://github.com/kaiko-ai/ahcore/tree/tumor-stroma-config
 This branch also includes the `train.py` script and a `requirements.txt` file with the exact versions of the python modules used in this working setup.
 
 ## Steps reproduce the setup
-1. Install Linux dependencies (C / Fortran compilers)
+1. Install Linux dependencies
 ```
 sudo apt-get update 
 sudo apt-get install build-essential 
