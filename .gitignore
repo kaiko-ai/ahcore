@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 logs/
 mlflow/
+mlruns/
 
 # C extensions
 *.so
